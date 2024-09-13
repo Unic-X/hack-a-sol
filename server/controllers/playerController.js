@@ -1,5 +1,7 @@
 const playersArray = [
-    { name: 'Player 1' },
+    { name: 'Player 1', 
+      age : 32,
+    },
     { name: 'Player 2' },
     { name: 'Player 3' },
     { name: 'Player 4' },
@@ -15,7 +17,7 @@ const playersArray = [
 
 async function getPlayer(req, res) {
     try {
-        const limit = parseInt(req.query.limit) || 10;
+        const limit = parseInt(req.query.limit) || 5;
         const offset = parseInt(req.query.offset) || 0;
 
         const players = playersArray.slice(offset, offset + limit);
