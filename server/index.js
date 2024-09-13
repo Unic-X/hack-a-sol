@@ -1,34 +1,22 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const dotenv = require('dotenv');
 
-dotenv.config();
+const express = require('express');
+const cors = require('cors'); // Import cors
+const playerRoutes = require('./routes/playerRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+
+// Use CORS middleware
+app.use(cors({
+    origin: 'http://localhost:3000' // Allow only your React app
+}));
 
 // Middleware
 app.use(express.json());
-app.use(cors());
 
-// MongoDB connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("MongoDB connected"))
-    .catch(err => console.log(err));
+// Player Routes
+app.use('/api', playerRoutes);
 
-// Simple route
-app.get('/', (req, res) => {
-    res.send("Hello, this is the backend!");
-});
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-app.get("/status", (request,response)=>{
-    const status = {
-        "Status": "Running"
-    };
-    response.send(status);
-    console.log(request);
-})
