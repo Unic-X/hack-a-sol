@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlayerList from './Players';
-import PlayerDetail from './components/PlayerDetail';
+// import PlayerDetail from './components/PlayerDetail';
 import PlayerProfile from './components/PlayerProfile';
 
 const playerData = {
