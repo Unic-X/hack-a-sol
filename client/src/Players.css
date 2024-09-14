@@ -1,0 +1,182 @@
+/* General Styling for both pages */
+body {
+    background-color: #2E3440;
+    color: #D8DEE9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Wrapper for all sections */
+  .wrapper {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 960px;
+  }
+  
+  /* Page Title */
+  .page-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #81A1C1;
+  }
+  
+  .headline {
+    color: #88C0D0;
+  }
+  
+  /* Search Bar */
+  .search-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #4C566A;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #3B4252;
+    color: #ECEFF4;
+  }
+  
+  /* Player List Grid */
+  .grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Player Card */
+  .books {
+    list-style: none;
+  }
+  
+  .card {
+    border: 1px solid #4C566A;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    background-color: #434C5E;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .no-underline {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .player-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .card-s {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-s h5 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+    color: #ECEFF4;
+  }
+  
+  /* Player Info Page Styling */
+  .player-info {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .player-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .player-image-info {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .player-stats {
+    flex: 1;
+    padding: 20px;
+    background-color: #434C5E;
+    border-radius: 10px;
+    color: #ECEFF4;
+  }
+  
+  .stats-box {
+    border: 1px solid #4C566A;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  /* Links on Player Info Page */
+  .player-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .link-card {
+    flex: 1;
+    padding: 20px;
+    background-color: #3B4252;
+    color: #ECEFF4;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #4C566A;
+  }
+  
+  .link-card a {
+    color: #88C0D0;
+    text-decoration: none;
+    font-size: 1.25rem;
+  }
+  
+  /* No players found */
+  p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #D08770;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .grid-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+/* Players.css */
+.player-detail {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .player-detail-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .player-detail a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
