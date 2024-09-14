@@ -31,7 +31,7 @@ This project aims to develop a comprehensive system for analyzing and predicting
 
 ## Dataset
 
-The dataset used for this analysis is sourced from [Kaggle](https://www.kaggle.com/datasets/kalaikumarr/cricket-series-ranking/data) or other open-source platforms.
+The dataset used for this analysis is sourced from [Kaggle](https://www.kaggle.com/datasets/kalaikumarr/cricket-series-ranking/data).
 
 ## Contributing
 
