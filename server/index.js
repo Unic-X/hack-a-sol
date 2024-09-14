@@ -9,9 +9,7 @@ const execRoutes = require('./routes/execModel')
 const app = express();
 
 // Use CORS middleware
-app.use(cors({
-    origin: 'http://localhost:3000' // Allow only your React app
-}));
+app.use(cors());
 
 app.use(express.json());
 

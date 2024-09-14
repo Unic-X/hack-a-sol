@@ -6,9 +6,11 @@ router.post('/',async (req,res)=>{
     const body = await req.body
     const player = body.player
     const opp_team= body.oppteam
-
+    
     text = await executePythonone('/home/modiji/Balls/hack-a-sol/server/execModel.py',player,opp_team)
-    res.send(text)
+    res.json({
+        run_scored : text
+    })
 });
 
 module.exports = router;
