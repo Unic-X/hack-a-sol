@@ -14,10 +14,6 @@ This project aims to develop a comprehensive system for analyzing and predicting
     - Construct a model to predict the player's performance in an upcoming match against the same opponent. 
     - Incorporate various scenarios and historical data to provide a well-rounded forecast, explaining the basis of predictions and potential influencing factors.
 
-3. **Comprehensive Reporting**:
-    - Produce a detailed report summarizing the analysis, highlighting significant patterns, and providing an in-depth explanation of the predictive model. 
-    - Ensure the report clearly outlines the insights gained from the analysis and the rationale behind the predictions made.
-
 ## Features
 
 - **Web Scraping**: Collect player performance data from online sources.
@@ -32,7 +28,6 @@ This project aims to develop a comprehensive system for analyzing and predicting
 - **Pandas & NumPy**: Data manipulation and analysis.
 - **Scikit-Learn**: For building predictive models.
 - **Matplotlib & Seaborn**: Data visualization.
-- **ChatGPT**: For generating insights and explanations.
 
 ## Getting Started
 
