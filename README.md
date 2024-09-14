@@ -54,12 +54,7 @@ This project aims to develop a comprehensive system for analyzing and predicting
 
 ## Dataset
 
-The dataset used for this analysis is sourced from [Kaggle](https://www.kaggle.com/datasets) or other open-source platforms. Ensure the dataset is placed in the `data/` directory before executing the analysis.
-
-## Report and Output
-
-- **Analytical Report**: Detailed insights into player performance and contributing factors.
-- **Prediction Model**: Performance forecasts for future matches.
+The dataset used for this analysis is sourced from [Kaggle]([https://www.kaggle.com/datasets](https://www.kaggle.com/datasets/kalaikumarr/cricket-series-ranking/data)) or other open-source platforms. Ensure the dataset is placed in the `data/` directory before executing the analysis.
 
 ## Contributing
 
