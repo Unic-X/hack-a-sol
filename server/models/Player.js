@@ -5,7 +5,6 @@ const playerSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // Add other fields as necessary
 });
 
 const Player = mongoose.model('Player', playerSchema);
