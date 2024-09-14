@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    background-color: #E3E6E3;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #222;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  .container {
+    width: 980px;
+    margin: 0 auto;
+  }
+  
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* Player Profile */
+  .cb-player-name-wrap {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .cb-font-40 {
+    font-size: 36px;
+    line-height: 42px;
+    margin: 0;
+  }
+  
+  .cb-font-18 {
+    font-size: 18px;
+    color: gray;
+    margin-left: 10px;
+  }
+  
+  /* Personal Info */
+  .cb-hm-rght {
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .cb-font-16 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .text-bold {
+    font-weight: bold;
+  }
+  
+  .cb-lst-itm-sm {
+    padding: 5px 0;
+  }
+  
+  .cb-col-40 {
+    width: 40%;
+    display: inline-block;
+  }
+  
+  .cb-col-60 {
+    width: 60%;
+    display: inline-block;
+  }
+  
+  /* Career Summary Tables */
+  .cb-plyr-tbl {
+    margin: 20px 0;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cb-plyr-thead th, 
+  .cb-plyr-tbody td {
+    padding: 8px;
+    text-align: right;
+  }
+  
+  .cb-plyr-th {
+    font-weight: bold;
+  }
+  
+  .cb-bg-grey {
+    background-color: #ecebeb;
+  }
+  
+  .cb-font-12 {
+    font-size: 12px;
+  }
+  
+  .cb-bg-white {
+    background-color: white;
+  }
+  
+  /* Images */
+  img {
+    border-radius: 4px;
+  }
+  
+  .cb-col-rt img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  
+  /* Utility Classes */
+  .text-right {
+    text-align: right;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-gray {
+    color: gray;
+  }
+  
+  .text-black {
+    color: black;
+  }
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 640px) {
+    .container, .page {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .cb-col-20, .cb-col-80, .cb-col-40, .cb-col-60, .cb-col-33, .cb-col-67 {
+      width: 100%;
+      display: block;
+    }
+  
+    .cb-player-name-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

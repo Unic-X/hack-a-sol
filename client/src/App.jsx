@@ -2,7 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlayerList from './Players';
-import PlayerDetail from './components/PlayerDetail';
+// import PlayerDetail from './components/PlayerDetail';
+import PlayerProfile from './components/PlayerProfile';
 
 const playerData = {
   players: [
@@ -31,7 +32,7 @@ const playerData = {
     {
       playerId: 2,
       name: "MS Dhoni",
-      image: "https://upload.wikimedia.org/wikipedia/commons/c/c9/MS_Dhoni.jpg",
+      image: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_640,q_50/lsci/db/PICTURES/CMS/319900/319946.png",
       country: "India",
       playingRole: "Wicketkeeper Batsman",
       battingStyle: "Right-hand bat",
@@ -53,7 +54,7 @@ const playerData = {
     {
       playerId: 3,
       name: "Rohit Sharma",
-      image: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Rohit_Gurunath_Sharma.jpg",
+      image: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_640,q_50/lsci/db/PICTURES/CMS/385800/385819.png",
       country: "India",
       playingRole: "Batsman",
       battingStyle: "Right-hand bat",
@@ -75,7 +76,7 @@ const playerData = {
     {
       playerId: 4,
       name: "AB de Villiers",
-      image: "https://upload.wikimedia.org/wikipedia/commons/4/49/AB_de_Villiers.jpg",
+      image: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_640,q_50/lsci/db/PICTURES/CMS/316500/316555.png",
       country: "South Africa",
       playingRole: "Batsman",
       battingStyle: "Right-hand bat",
@@ -97,7 +98,7 @@ const playerData = {
     {
       playerId: 5,
       name: "David Warner",
-      image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/David_Warner.jpg",
+      image: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_640,q_50/lsci/db/PICTURES/CMS/316500/316589.png",
       country: "Australia",
       playingRole: "Batsman",
       battingStyle: "Left-hand bat",
@@ -150,7 +151,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<PlayerList players={playerData.players} />} />
-        <Route path="/player/:id" element={<PlayerDetail players={playerData.players} />} />
+        <Route path="/player/:id" element={<PlayerProfile players={playerData.players} />} />
       </Routes>
     </Router>
   );
