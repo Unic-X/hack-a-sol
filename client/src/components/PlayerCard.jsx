@@ -1,4 +1,3 @@
-// components/PlayerCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Players.css';
@@ -15,6 +14,8 @@ const PlayerCard = ({ player }) => {
           />
           <section className="card-s">
             <h5>{player.name}</h5>
+            <p>{player.country}</p>
+            <p>{player.playingRole}</p>
           </section>
         </Link>
       </article>

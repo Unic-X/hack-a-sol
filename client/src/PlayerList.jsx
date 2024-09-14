@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Players.css'; // Custom CSS for player cards and background
 import PlayerCard from './components/PlayerCard';
-import { Link } from 'react-router-dom'; // Assuming you are using react-router for navigation
 
 const PlayerList = ({ players }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -32,11 +31,7 @@ const PlayerList = ({ players }) => {
       <ul className="grid-list">
         {filteredPlayers.length > 0 ? (
           filteredPlayers.map((player) => (
-            <li key={player.playerId} className="player-card">
-              <Link to={`/player/${player.playerId}`}>
-                <PlayerCard player={player} />
-              </Link>
-            </li>
+            <PlayerCard key={player.playerId} player={player} />
           ))
         ) : (
           <p>No players found</p>
