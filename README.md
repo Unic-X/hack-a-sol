@@ -29,30 +29,6 @@ This project aims to develop a comprehensive system for analyzing and predicting
 - **Scikit-Learn**: For building predictive models.
 - **Matplotlib & Seaborn**: Data visualization.
 
-## Getting Started
-
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/cricket-performance-analysis.git
-    cd cricket-performance-analysis
-    ```
-
-2. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Run the Analysis**:
-    - Place the dataset in the `data/` directory.
-    - Start the analysis by running:
-        ```bash
-        python main.py
-        ```
-
-4. **Generate Reports**:
-    - Access the analysis and predictions in the generated report files.
-
-## Dataset
 ## Dataset
 
 The dataset used for this analysis is sourced from [Kaggle](https://www.kaggle.com/datasets/kalaikumarr/cricket-series-ranking/data) or other open-source platforms.
