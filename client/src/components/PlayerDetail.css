@@ -1,0 +1,56 @@
+.player-detail-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  
+  .player-info {
+    flex: 1;
+  }
+  
+  .player-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: black; /* Set text color to black */
+  }
+  
+  .player-info p {
+    margin: 5px 0;
+    color: black; /* Set text color to black */
+  }
+  
+  .career-stats {
+    margin-left: 20px;
+    background-color: #171515;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .career-stats h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: black; /* Set text color to black */
+  }
+  
+  .career-stats table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .career-stats th, .career-stats td {
+    border: 1px solid #180707;
+    padding: 8px;
+    text-align: left;
+    color: rgb(255, 255, 255); /* Set text color for table cells to black */
+  }
+  
+  .career-stats th {
+    background-color: #ffffff;
+    color: black; /* Set text color for table headers to black */
+  }
+  

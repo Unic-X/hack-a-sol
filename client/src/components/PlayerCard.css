@@ -1,0 +1,50 @@
+.player-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 230px; /* Narrower width for consistency */
+  height: 350px; /* Set fixed height for cards */
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  text-align: left;
+  background-color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.player-card-container:hover {
+  transform: translateY(-5px);
+}
+
+.player-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.player-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.player-card-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  text-align: center;
+  max-height: 3.6em; /* Allows up to 3 lines of text */
+  overflow: hidden; /* Ensures excess text is hidden */
+  text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
+  line-height: 1.2em; /* Controls line spacing */
+}
+
+.player-card-info p {
+  font-size: 1rem;
+  margin: 5px 0;
+  text-align: center;
+  color: #000000;
+}

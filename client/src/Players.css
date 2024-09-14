@@ -1,6 +1,6 @@
 /* General Styling for both pages */
 body {
-    background-color: #2E3440;
+    background-color: #0eb0e1;
     color: #D8DEE9;
     font-family: Arial, sans-serif;
   }
@@ -18,11 +18,11 @@ body {
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
-    color: #81A1C1;
+    color: #edf0f2;
   }
   
   .headline {
-    color: #88C0D0;
+    color: #f5f7f8;
   }
   
   /* Search Bar */
@@ -35,7 +35,7 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 10px;
-    border: 1px solid #4C566A;
+    border: 1px solid #d8dfed;
     border-radius: 4px;
     font-size: 16px;
     background-color: #3B4252;
@@ -55,11 +55,10 @@ body {
   }
   
   .card {
-    border: 1px solid #4C566A;
-    border-radius: 10px;
+    border: 1px solid #101419;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
-    background-color: #434C5E;
+    background-color: #e7eaf0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   
@@ -87,7 +86,7 @@ body {
     font-size: 1.25rem;
     margin: 0;
     font-weight: 600;
-    color: #ECEFF4;
+    color: #000000;
   }
   
   /* Player Info Page Styling */
@@ -108,7 +107,6 @@ body {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
   }
   
   .player-stats {
@@ -151,7 +149,7 @@ body {
   p {
     text-align: center;
     font-size: 1.5rem;
-    color: #D08770;
+    color: hsl(0, 80%, 4%);
   }
   
   /* Responsive Design */
@@ -164,19 +162,18 @@ body {
 
 /* Players.css */
 .player-detail {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .player-detail-image {
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .player-detail a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-  }
-  
+  text-align: center;
+  padding: 20px;
+}
+
+.player-detail-image {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.player-detail a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
