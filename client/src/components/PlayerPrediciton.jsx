@@ -28,7 +28,7 @@ export default function PlayerPrediction() {
 
   // Prediction function that only executes when oppTeam changes
   const predict = async () => {
-    const response = await fetch('http://localhost:5000/predict', {
+    const response = await fetch('https://loonix.in:8443/predict', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
