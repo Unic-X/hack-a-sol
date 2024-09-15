@@ -41,9 +41,5 @@ Contributions are welcome! Please open issues, submit pull requests, or provide 
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries, please reach out to [your-email@example.com](mailto:arman22102@iiitnr.edu.in).
+This project is licensed under the WTFPL License. See the [LICENSE](LICENSE) file for details.
 
