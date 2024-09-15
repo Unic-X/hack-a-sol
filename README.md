@@ -16,18 +16,20 @@ This project aims to develop a comprehensive system for analyzing and predicting
 
 ## Features
 
-- **Web Scraping**: Collect player performance data from online sources.
+- **Web Scraping**: Collect player performance data from `cricbuzz.com` into the `MongoDB` database .
 - **Performance Metrics Analysis**: Evaluate key metrics to understand player performance in different match outcomes.
-- **Predictive Modeling**: Use historical data to forecast future performance.
-- **Data Visualization**: Create visual representations of performance trends and insights.
+- **Predictive Modeling**: Use historical data to forecast future performance using `catboost` model.
 
 ## Technologies Used
 
 - **Python**: Core programming language.
-- **BeautifulSoup & Requests**: For web scraping.
-- **Pandas & NumPy**: Data manipulation and analysis.
-- **Scikit-Learn**: For building predictive models.
-- **Matplotlib & Seaborn**: Data visualization.
+- **BeautifulSoup & Requests**: For web scraping the website and request to post into the `mongoDB` site.
+- **Pandas & NumPy**: Data manipulation and analysis in the (in `ML` part only).
+- **Catboost**: For building predictive model.
+- **Matplotlib & Seaborn**: Data visualization (in `ML` part only).
+- **AWS EC2** : For deploying the `express.js` server.
+- **Vercel** : Used for deploying the frontend `react.js` client.
+- **MongoDB** : Used for storing the intersection of dataset we got and cricbuzz.com website.
 
 ## Dataset
 
