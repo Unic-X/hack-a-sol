@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
+import catboost
 from catboost import CatBoostRegressor
 from catboost.core import sys
 from sklearn.metrics import mean_squared_error, r2_score
@@ -15,9 +16,9 @@ opponent_team = sys.argv[2]
 
 
 # Define feature columns and label
-df=pd.read_csv('/home/modiji/Balls/hack-a-sol/server/preprocessing_data.csv')
-matching_indices = df[(df['Player_name'] == player) & 
-                    (df['Team2'] == name)].index
+df=pd.read_csv('/home/modiji/Balls/hack-a-sol/ml/merged_data.csv')
+matching_indices = df[(df['Player_name'] == player_name) & 
+                    (df['Team2'] == opponent_team)].index
 df['Strike rate']=df['Runs_Scored']/df['Balls_faced']
 df['Strike rate'] = df['Strike rate'].fillna(0)
 df= df[~np.isinf(df['Strike rate'])]
@@ -28,7 +29,7 @@ label_encoder = LabelEncoder()
 # Encode categorical features, if necessary
 for column in X.select_dtypes(include=['object']).columns:
     X[column] = label_encoder.fit_transform(X[column])
-with open('/kaggle/working/predict_score2.pickle','rb') as f:
+with open('/home/modiji/Balls/hack-a-sol/server/strike_rate.pickle','rb') as f:
     mod=pickle.load(f)
     
 X_train=np.array(X)
@@ -54,4 +55,4 @@ if len(filtered_y_train)!=0:
     mse = mean_squared_error(filtered_y_test, y_pred)  # Calculate Mean Squared Error
     r2 = r2_score(filtered_y_test, y_pred)  # Calculate R^2 Score
         #print('runs',y_pred[0])
-print(int(y_pred[0]))
+print(float(y_pred[0]))
