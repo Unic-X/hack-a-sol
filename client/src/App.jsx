@@ -34,6 +34,15 @@ export default function App() {
     fetchPlayers();
   }, []);
 
+  // Handle player search
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    const filtered = players.filter(player =>
+      player['Full Name'].toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFilteredPlayers(filtered);
+  };
+
   const handlePlayerClick = (player) => {
     navigate(`/player/${player._id}`, { state: { player } });
   };
@@ -42,8 +51,21 @@ export default function App() {
     <div className="container">
       <div className="inner-container">
         <h1 className="header">Cricket Players</h1>
+
+        {/* Search bar */}
+        <div className="search-bar-container">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search by player name"
+            value={searchQuery}
+            onChange={handleSearch}
+          />
+        </div>
+
         <div className="grid">
-          {players.map(player => (
+          {/* Use filteredPlayers if search query exists, otherwise display all */}
+          {(searchQuery ? filteredPlayers : players).map(player => (
             <div key={player.uniqueId} className="card" onClick={() => handlePlayerClick(player)}>
               <div className="card-content">
                 <div className="card-header">
