@@ -1,24 +1,76 @@
-// App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PlayerList from './Players';
-// import PlayerDetail from './components/PlayerDetail';
-import PlayerProfile from './components/PlayerProfile';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import PlayerInfo from './components/PlayerInfo';
+import './App.css';
 
+export default function App() {
+  const [players, setPlayers] = useState([]);
+  const [filteredPlayers, setFilteredPlayers] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
+  const fetchPlayers = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(`https://loonix.in:8443/api/players?limit=100&offset=${offset}`);
+      const data = await response.json();
 
+      const playersWithUniqueIds = data.map((player, index) => ({
+        ...player,
+        uniqueId: `${player._id}-${offset + index}`,
+      }));
 
+      setPlayers(prevPlayers => [...prevPlayers, ...playersWithUniqueIds]);
+      setOffset(prevOffset => prevOffset + 5);
+    } catch (error) {
+      console.error('Error fetching players:', error);
+    }
+    setLoading(false);
+  };
 
-const App = () => {
+  useEffect(() => {
+    fetchPlayers();
+  }, []);
+
+  const handlePlayerClick = (player) => {
+    navigate(`/player/${player._id}`, { state: { player } });
+  };
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<PlayerList />} />
-        <Route path="/player/:id" element={<PlayerProfile />} />
-      </Routes>
-    </Router>
+    <div className="container">
+      <div className="inner-container">
+        <h1 className="header">Cricket Players</h1>
+        <div className="grid">
+          {players.map(player => (
+            <div key={player.uniqueId} className="card" onClick={() => handlePlayerClick(player)}>
+              <div className="card-content">
+                <div className="card-header">
+                  <img
+                    src={player['Profile Image']}
+                    alt={player['Full Name']}
+                    className="avatar"
+                  />
+                  <h2 className="player-name">{player['Full Name']}</h2>
+                </div>
+                <p className="player-info"><strong>Role:</strong> {player.Role}</p>
+                <p className="player-info"><strong>Born:</strong> {player.Born}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="load-more-container">
+          <button
+            onClick={fetchPlayers}
+            disabled={loading}
+            className={`button ${loading ? 'disabled-button' : ''}`}
+          >
+            {loading ? 'Loading...' : 'Load More'}
+          </button>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default App;
+}
 

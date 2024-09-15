@@ -1,24 +1,55 @@
-
 const express = require('express');
-const cors = require('cors'); // Import cors
+const cors = require('cors');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const playerRoutes = require('./routes/playerRoutes');
-const execRoutes = require('./routes/execModel')
-
-
+const execRoutes = require('./routes/execModel');
 
 const app = express();
 
-// Use CORS middleware
+// Middleware
 app.use(cors());
-
 app.use(express.json());
 
-// Player Routes
-app.use('/api', playerRoutes);
+const uri = "mongodb+srv://hackasolclient:xAt9qV3IRBGk1eZL@hack-a-sol.pc9l3.mongodb.net/?retryWrites=true&w=majority&appName=hack-a-sol";
+let db;
 
-app.use('/predict',execRoutes)
+async function connectMongoDB() {
+  const client = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
+
+  try {
+    await client.connect();
+    db = client.db('cricket_db');
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.error("Failed to connect to MongoDB", err);
+    process.exit(1);
+  }
+}
+
+// Routes
+app.use('/api', (req, res, next) => {
+  req.db = db;
+  next();
+}, playerRoutes);
+app.use('/predict', execRoutes);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+// Start server after connecting to the database
+connectMongoDB().then(() => {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+});
+
+// Graceful shutdown
+process.on('SIGINT', async () => {
+  await db.client.close();
+  console.log('MongoDB connection closed');
+  process.exit(0);
+});
 
